@@ -1,0 +1,79 @@
+<nav>
+    <!-- class="navbar navbar-default" -->
+    <div>
+        <!--  class="container-fluid" -->
+        <div>
+            <!-- class="navbar-header" -->
+
+            <div id="idDetails">
+                 {{today | date:'medium'}}<br>
+               <a *ngIf="auth.isAuthenticated()"> WELCOME <br>{{email}}</a>
+               <br>          
+            </div>
+
+            <a id="logo" [routerLink]="['/home']"> H • A • R • M • O • N • Y<br><div id="lowerheader">By Yehudit & Ronit</div></a>
+
+            <a *ngIf="auth.Role" class="Bar" [routerLink]="['/admin']">Admin</a>
+            <a id="sale" class="Bar" [routerLink]="['/sale']" *ngIf="auth.isAuthenticated()"> Sale</a>
+            <a class="Bar" [routerLink]="['/woman']" *ngIf="auth.isAuthenticated()"> Women</a>
+            <a class="Bar" [routerLink]="['/men']" *ngIf="auth.isAuthenticated()">Men</a>
+            <a id="Winter" [routerLink]="['/winter']" *ngIf="auth.isAuthenticated()"> PreView On Winter Collection</a>
+            <a class="login" [routerLink]="['/login']" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Login/Sign-Up</a>
+            <a class="login" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Log Out</a>
+            <hr>
+
+            <div id="backgr">
+
+                <div id="head" *ngIf="!auth.isAuthenticated()">
+            
+                       <h1 id="idq">Quality,Style,Harmony.</h1>
+       <br/>
+      <h6> You Order ,We Deliver Your Products Within 3 Days Max!!!</h6>
+      <br>
+
+        <h5>In Order To Enjoy Our On-Line Store Please Login/Sign-Up.</h5>
+  
+
+                    <div class="slideshow-container">
+
+
+                        <div class="mySlides fade isActive">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="https://i.pinimg.com/736x/b5/83/dd/b583dd59e5b82360ad35877f09030244--black-style-my-style.jpg">
+                            <div class="text">Crop Top</div>
+                        </div>
+
+                        <div class="mySlides fade notActive">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="https://img.huffingtonpost.com/asset/57bb23201700001108c74ad0.jpeg?ops=scalefit_970_noupscale">
+                            <div class="text">Mans' Jacket</div>
+                        </div>
+
+                        <div class="mySlides fade notActive">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="http://cdn.glamour.es/uploads/images/thumbs/es/glam/4/s/2016/06/jasmine_tookes_y_tobias_sorensen_5620_600x315.jpg">
+                            <div class="text">Long Blouse</div>
+                        </div>
+
+
+                    </div> 
+                    <br>
+
+                    <div style="text-align:center">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+
+            <!-- <pre class="full-profile">{{ profile | json }}</pre> -->
+        </div>
+    </div>
+</nav>
+<hr>
+<a class="Bar" [routerLink]="['/contact-us']">Contact Us</a>
+<a class="Bar" [routerLink]="['/about']"> About</a>
+<br>
+<p id="bottomheader">©2017 All rights reserved to Harmony.com Ltd</p>

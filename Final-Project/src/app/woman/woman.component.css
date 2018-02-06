@@ -1,0 +1,100 @@
+h1{
+    text-align: center;
+    font-family: Papyrus;
+    font-weight:bolder;
+    font-size:70px;
+    color: white;
+    
+}
+#divImg{
+    display: inline-block;
+    padding: 2%;
+    margin-left: 3%;
+}
+img{
+  border: 2px solid rgba(0,0,0,0.4);
+
+}
+#PNamePrice{
+    color: white;
+    font-family: Papyrus;
+    font-size: 23px;
+    text-align: center;
+    background-color:   rgba(0,0,0,0.2); 
+}
+input{
+   font-size: 30px;
+}
+button{
+
+     border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding-bottom: 15px;
+  font-size:78px;
+   text-align: center;
+font-family: Papyrus;
+ color: white;
+       
+}
+button:hover{
+      cursor: pointer;
+  /* color: #8ABF8A; */
+  font-weight: 900;
+}
+    /* img:hover{
+        width: 500px;
+        height: 500px;
+    } */
+    
+  input [ type="checkbox"] {
+        padding-left: 22px;
+    height: 20px;
+    display: inline-block;
+    line-height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+   
+   
+}
+#order{
+     color:#FAFD94;
+     text-shadow:2px 2px #6F2B2A;
+     font-family: Papyrus;
+    height: 50px;
+    text-align: right;
+     margin-top: 11px;
+    font-size:55px;
+    float: right;
+}
+        .checked{
+font-size:20px;
+        color:red;
+         font-weight: bolder;
+    }
+     .not-checked{
+    font-size:23px;
+        color:#FAFD94;
+         font-weight: bolder;
+          text-shadow:2px 3px #6F2B2A;
+
+    }
+        #shopId{
+            font-size: 15px;
+        }
+          button[hidden]{
+
+    display:none;
+  }
+  

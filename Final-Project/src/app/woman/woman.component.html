@@ -1,0 +1,17 @@
+<h1> Women </h1>
+<p>Searche : </p>
+<input type="text"  [(ngModel)]="term">
+   <div ><button id="order" (click)="onClichOrder()"><span  class="glyphicon glyphicon-shopping-cart"></span> View Order </button>  </div>
+<div id="divImg" *ngFor="let item of GS.womenItems| search : term  ">
+       
+     
+        <img  src= './assets/{{item.ItemImage}}'/>
+        <br>
+       <p id="PNamePrice" > {{item.ItemName}}   <br>
+              {{item.Price}} $  <button type="button" (click)="onClick(item)" [hidden]="!item.check" class="checked"> Add To Shopping Bag
+               <span id="shopId" class="glyphicon glyphicon-minus"></span></button>
+              <button type="button" (click)="onClick(item)"[hidden]="item.check" class="not-checked" > Add To Shopping Bag
+               <span id="shopId" class="glyphicon glyphicon-plus"></span>
+              </button></p>
+
+</div>

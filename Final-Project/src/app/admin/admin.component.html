@@ -1,0 +1,177 @@
+<nav>
+  <div>
+    <div>
+  <!-- העלאה  של פריטים -->
+        <button class="menueBut" (click)="ShowItemAddForme()"> Add New Item </button>
+          <div class="divForm">
+        <form *ngIf="ShowFormItem" #trvformItem="ngForm" (ngSubmit)="UploadItem(trvformItem)">
+          
+            <label class="lab1">
+      <span>Item Name</span>
+      <input id="idName" name="Name" type="text" class="Name"  required  [(ngModel)]="ItemName" #trvName="ngModel"/>
+      <div *ngIf="trvName.errors && (trvName.dirty || trvName.touched)" >
+ <div id="divReq" [hidden]="!trvName.errors.required">Name is required</div>   
+ </div>
+    </label>
+<br>
+        <label class="lab1"><span> Category </span></label>
+      <select name="Category" [(ngModel)]="Category" required #trvCategory="ngModel">
+      <option  *ngFor="let cat of CategoryArr"  [value]="cat">{{cat}}</option>
+      </select> 
+    <br>
+          <label class="lab1">
+      <span>Price </span>
+      <input id="idPrice" name="Price"  type="number" required 
+      [(ngModel)]="Price" #trvPrice="ngModel"/>
+         <div *ngIf="trvPrice.errors && (trvPrice.dirty || trvPrice.touched)" >
+      <div id="divReq" [hidden]="!trvPrice.errors.required">Price is required</div>   
+       </div>
+    </label>
+
+ <br>
+
+
+ <!-- הוספה לטבלה של המלאי וההעתקה של הקטגוריה והשם של הפריט לתוך הטבה של המלאי   -->
+
+     <label class="lab1"> 
+      <span> Stock </span>
+      <input id="idtrvStock" name="trvStock" type="number" class="Name"  required  [(ngModel)]="Stock" #trvStock="ngModel"/>
+      <div *ngIf="trvStock.errors && (trvStock.dirty || trvStock.touched)" >
+ <div id="divReq" [hidden]="!trvStock.errors.required">Stock is required</div>   
+  </div> 
+</label>
+
+
+<br>
+
+       <label class="lab1">
+<span>Upload </span>  
+<input  id="idUpload" type="file" (change)="fileChange($event)" class="upload" value="Upload" /> 
+  
+ </label>
+          <button  id="butAddPro" [disabled]="!trvformItem.valid"  class="ButForm" type="submit"> Add Product </button>
+        </form>
+      </div>
+
+
+
+
+
+
+
+        <!-- טבלה של משתמשים -->
+
+      <button class="menueBut" (click)="ShowCusTable()"> Customers List </button>
+      <div id="CustTaleDiv" *ngIf="ShowCustList">
+        <table>
+          <tr>       
+            <th> Email </th>
+         
+          </tr>
+          <tr *ngFor="let Cust of CustomersArray">         
+            <td> {{Cust.Email}}</td>
+            <!-- <td><span (click)="showFormCust2(Cust)" class="glyphicon glyphicon-edit"></span></td>
+            <td><span (click)="deleteCust(Cust.Id)" type="button" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-remove"></span>          -->
+          </tr>
+        </table>
+
+             <!-- טופס עידכון משתמש -->
+     
+      </div>
+     
+    </div>
+  </div>
+</nav>
+  <!-- טבלה של פריטים -->
+ <button class="menueBut" (click)="ShowItemsTable()"> Items List </button>
+      <div id="CustTaleDiv" *ngIf="ShowItemsList">
+
+        <table>
+          <tr>
+            <th> Category </th>
+            <th> Item Name </th>
+            <th> Item Image </th>
+            <th> Price  </th>
+          
+            <th> Edit </th>
+            <th> Delete </th>
+          </tr>
+
+          <tr *ngFor="let item of arItems">
+             <td> {{item.Category}}</td>
+            <td> {{item.ItemName}}</td>
+            <td> {{item.ItemImage}}</td>
+            <td> {{item.Price}} </td>
+           
+       
+             <td><span (click)="showFormItems2(item)" class="glyphicon glyphicon-edit"></span></td>
+            <td><span  type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click)="GetItemIdDelete(item.Id)" class="glyphicon glyphicon-remove"></span> 
+          </tr>
+            
+        </table>
+ <div class="modal fade" id="myModal" role="dialog">
+    <div id="myModal" class="modal-dialog">
+      <div id="myModal" class="modal-content">
+        <div id="myModal" class="modal-header">
+          <h4 id="HWar" class="modal-title">Warning !!</h4>
+        </div>
+        <div id="myModal" class="modal-body">
+          <p id="PMess" >Are you sure you wont to delete this Item ?</p>
+        </div>
+        <div id="myModal" class="modal-footer">
+         <button id="ButYN" type="button" class="btn btn-default"  (click)="DeleteItem()"  data-dismiss="modal">Yes</button>    <button id="ButYN"  type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <!-- הטופס של עידכון פריטים -->
+
+<div class="divForm">
+  <form *ngIf="isFormShow2" (ngSubmit)="FormEditItem(trvformItemEdit.value)" #trvformItemEdit="ngForm">
+     <label class="lab1">
+          <span>Item Name</span>
+         
+      <input id="idName" name="Name" type="text" class="Name" required 
+      [(ngModel)]="ItemNameEdit" #trvName="ngModel"/>
+    </label>
+
+          <label class="lab1">
+      <span>Item Image</span>
+      <input id="idName" name="ItemImage"  type="text" required
+      [(ngModel)]="ItemImageEdit" #trvItemImage="ngModel" class="Name" />
+    </label>
+          <br>
+          <label>
+      <span>Category</span>
+      <select name="Category"  type="text" required 
+      [(ngModel)]="CategoryEdit" #trvCategory ="ngModel">
+      <option>Mem</option>
+      <option>Women</option>
+      <option>Sale</option>
+       <option>Winter</option> 
+      </select>
+    </label>
+
+          <label>
+      <span>Price</span>
+      <input name="Price" 
+      [(ngModel)]="PriceEdit" #trvPrice="ngModel" type="text"/>  
+    </label>
+
+     <!-- <label class="lab1">
+      <span> Stock </span>
+      <input id="idtrvStockEdit" name="trvStockEdit" type="number" class="Name"  required  [(ngModel)]="StockEdit" #trvStockEdit="ngModel"/>
+      <div *ngIf="trvStockEdit.errors && (trvStockEdit.dirty || trvStockEdit.touched)" >
+ <div id="divReq" [hidden]="!trvStockEdit.errors.required">Stock is required</div>   
+ </div>
+    </label> -->
+<br>
+          <button class="ButForm" type="submit"> Save Changes </button>
+        </form>
+</div>
+      </div>
+
+

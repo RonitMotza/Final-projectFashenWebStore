@@ -1,0 +1,96 @@
+<nav>
+  <div>
+    <div>
+       
+<div  *ngIf="FormOrderShow"  id="div1">
+
+ <h1>Contact Us</h1>
+
+   <p id="Description"> Feel free to share with us your thoughts about our service and products.<br>
+    Waiting to hear from you.<span class="glyphicon glyphicon-heart" ></span>
+    <br>
+    <br>
+        Tel Aviv, Florentin 150/12<br> 
+                +972 -5584 - 555<br>
+   <p id="logo"> H • A • R • M • O • N • Y<br>
+    By Yehudit & Ronit.
+    
+ </p>
+    
+</div>
+<div *ngIf="FormOrderShow"  id="div3">
+  <form (ngSubmit)="clickHandlerGet(trvform1)" #trvform1="ngForm">
+    <div id="div2">
+      <label class="lab1">
+      <span>Name</span>
+      <input type="text" [(ngModel)]="name" name="name" #trvName ="ngModel" required/>
+      <div *ngIf="trvName.errors && (trvName.dirty || trvName.touched)" >
+       <div id="divReq" [hidden]="!trvName.errors.required">Name  Is Required</div> 
+        </div>
+    </label>
+
+      <label class="lab1">
+      <span>Email</span>
+      <input type="email" [(ngModel)]="emailCust" name="email" #trvEmail ="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/>
+      <div *ngIf="trvEmail.errors && (trvEmail.dirty || trvEmail.touched)" >
+       <div id="divReq" [hidden]="!trvEmail.errors.required">Email Is Required</div> 
+       <div id="divReq" [hidden]="!trvEmail.errors.pattern">Email Is Not Valid</div> 
+        </div>
+    </label>
+    </div>
+
+    <label>
+      <span>Subject</span>
+      <input type="text" [(ngModel)]="subject" name="subject"  #trvSubject ="ngModel" required/>
+      <div *ngIf="trvSubject.errors && (trvSubject.dirty || trvSubject.touched)" >
+       <div id="divReq" [hidden]="!trvSubject.errors.required">Subject Is Required</div> 
+        </div>
+    </label>
+
+    <label>
+      <span>Phone Number</span>
+      <input type="text" [(ngModel)]="phone" name="phone"  #trvPhone ="ngModel" required/>
+      <div *ngIf="trvPhone.errors && (trvPhone.dirty || trvPhone.touched)" >
+       <div id="divReq" [hidden]="!trvPhone.errors.required">Phone Number Is Required</div> 
+        </div>
+    </label>
+
+    <label>
+      <span>Address</span>
+      <input type="text" [(ngModel)]="address" name="address"  #trvAdress ="ngModel" required/>
+      <div *ngIf="trvAdress.errors && (trvAdress.dirty || trvAdress.touched)" >
+       <div id="divReq" [hidden]="!trvAdress.errors.required">Address Is Required</div> 
+        </div>
+    </label>
+    <label>
+      <span>Message</span>
+      <textarea  rows="3" [(ngModel)]="message" name="message" required  #trvMessage ="ngModel"></textarea>
+       <div *ngIf="trvAdress.errors && (trvAdress.dirty || trvAdress.touched)" >
+       <div id="divReq" [hidden]="!trvAdress.errors.required">Please Enter A Content</div> 
+        </div>
+    </label>
+    <button data-toggle="modal" data-target="#myModal" type="submit" [disabled]="!trvform1.valid"> Send </button>
+
+  </form>
+</div>
+
+<div *ngIf="loaderShow" class="loader"></div>
+
+    <div  id="myModal1" *ngIf="booldj"  role="dialog">
+    <div  id="myModal" class="modal-dialog modal-lg">
+      <div  id="myModal" class="modal-content">
+        <div  id="myModal" class="modal-header">
+
+                <h4 id="HWar" class="modal-title">{{mess1}} </h4>
+            </div>
+            <div class="modal-body">
+                <p id="PMess">{{mess2}}</p>
+                 <p id="PMess2">{{successMessage1}}</p>
+                  <p id="PMess2">{{successMessage2}}</p>
+            </div>
+            <div  id="myModal"  class="modal-footer">
+                <button id="ButYN"  type="button" class="btn btn-default" (click)="hideErrorMsg()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

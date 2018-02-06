@@ -1,0 +1,103 @@
+<div *ngIf="FormOrderShow" id="div3">
+<h1>Your Order  </h1>
+
+<form (ngSubmit)="clickHandlerGet(trvformOrder)" #trvformOrder="ngForm">
+             <label class="lab1">
+      <span>First Name</span>
+      <input  name="Name" type="text" class="Name" type="text" required 
+      [(ngModel)]="Name" #trvName="ngModel"/>
+      <div *ngIf="trvName.errors && (trvName.dirty || trvName.touched)" >
+ <div id="divReq" [hidden]="!trvName.errors.required">First Name is required</div>   
+ </div>
+    </label>
+     <label class="lab1">
+      <span>Last Name</span>
+      <input  name="LastName" type="text" class="Name" type="text" required 
+      [(ngModel)]="LastName" #trvLastName="ngModel"/>
+      <div *ngIf="trvLastName.errors && (trvLastName.dirty || trvLastName.touched)" >
+ <div id="divReq" [hidden]="!trvLastName.errors.required">Last Name is required</div>   
+ </div>
+    </label>
+
+
+                <label class="lab1">
+      <span>City</span>
+      <input  name="City"  type="text" required  [(ngModel)]="City" #trvCity="ngModel" class="Name" />
+            <div *ngIf="trvCity.errors && (trvCity.dirty || trvCity.touched)" >
+ <div id="divReq" [hidden]="!trvCity.errors.required">City To Send The Order Is Required </div>   
+ </div>
+    </label>
+
+      <label>
+      <span>Street </span>
+      <input type="text" [(ngModel)]="Street" name="Street"  #trvStreet="ngModel" required />
+        <div *ngIf="trvStreet.errors && (trvStreet.dirty || trvStreet.touched)">
+       <div id="divReq" [hidden]="!trvStreet.errors.required">Street To Send The Order Is Required</div> 
+        </div>
+    </label>
+        <label>
+        <span>Phone Number </span>
+      <input type="text" [(ngModel)]="Phone" name="Phone"  #trvPhone="ngModel" required />
+        <div *ngIf="trvPhone.errors && (trvPhone.dirty || trvPhone.touched)" pattern="[0-9]{0,10}">
+       <div id="divReq" [hidden]="!trvPhone.errors.required">Phone Number To Send The Order Is Required</div> 
+        <div id="divReq" [hidden]="!trvPhone.errors.pattern">Phone Number Must Be In Numbers!</div>
+        </div>
+    </label>
+     <!-- placeholder="address to send the items .. " -->
+     
+      <label >
+      <span>Payment</span>
+      <br>
+<select  [(ngModel)]="Payment" name="Payment"  #trvPayment="ngModel" required  >
+
+<option> Cash </option>
+<option> Credit Card  </option>
+</select>
+  <div *ngIf="trvPayment.errors && (trvPayment.dirty || trvPayment.touched)" >
+       <div id="divReq" [hidden]="!trvPayment.errors.required">Payment Is Required</div> 
+        </div>
+
+    </label>
+       <h2 id="pay"> Total Payment : {{AllPrices}} $</h2>
+
+      <button id="butOrd"  type="submit" data-toggle="modal" data-target="#myModal" [disabled]="!trvformOrder.valid"> Order Now </button>  
+     </form>
+       
+</div>
+
+<div *ngIf="loaderShow" class="loader"></div>
+
+    <div  id="myModal1" *ngIf="booldj"  role="dialog">
+    <div  id="myModal" class="modal-dialog modal-lg">
+      <div  id="myModal" class="modal-content">
+        <div  id="myModal" class="modal-header">
+
+                <h4 id="HWar" class="modal-title"> {{titleMess}}</h4>
+            </div>
+            <div class="modal-body">
+                <p id="PMess">{{successMessage}}</p>
+                 <p id="PMess2">{{successMessage1}}</p>
+                  <p id="PMess2">{{successMessage2}}</p>
+            </div>
+            <div  id="myModal"  class="modal-footer">
+                <button id="ButYN"  type="button" class="btn btn-default" (click)="hideErrorMsg()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="FormOrderShow" >
+<div   id="divImg"  *ngFor="let item of GS.checked">
+ 
+        <img src= './assets/{{item.ItemImage}}'/>
+        <br>
+       <p id="PNamePrice"> {{item.ItemName}} <br>
+        
+        {{item.Price}} $ </p> 
+ <!-- <button (click)="clickItemOrder(item)">Delete</button> -->
+</div>
+</div>
+   
+ 

@@ -1,0 +1,207 @@
+
+ input,select {
+  border: none;
+  outline: none;
+  background: none;
+   font-family: Papyrus;
+    color: white;
+} 
+option{
+   color: black;
+}
+button{
+ border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding-bottom: 15px;
+  font-size: 38px;
+   text-align: center;
+font-family: Papyrus;
+ color: white;
+       
+}
+ label {
+ 
+  font-family: Papyrus;
+  margin: 10px auto 0;
+  padding:3%;
+
+ }
+  span {
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+  
+}
+
+ input,select {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 15px;
+  font-size: 20px;
+ /* border-bottom: 1px solid rgba(0,0,0,0.4);*/
+  border-bottom: 1px solid white;
+  /* text-align: center; */
+} 
+::placeholder{
+    /* color:  rgba(0,0,0,0.2);  */
+     font-size: 19px;
+      color: white;
+ 
+}
+   
+    
+    #div3{
+
+ float:right;
+  width: 50%;
+  margin-top: -1%;
+  background-color: rgba(0,0,0,0.5); 
+  height: 550px;
+ 
+    }
+
+    
+h1{
+    text-align: center;
+    font-family: Papyrus;
+    font-weight:bolder;
+    font-size:70px;
+    color: white;
+
+}
+
+p{
+    color: wheat;
+    font-size: 20px;
+}
+
+img{
+  border: 2px solid rgba(0,0,0,0.4);
+
+}
+#PNamePrice{
+    color: white;
+    font-family: Papyrus;
+    font-size: 23px;
+    text-align: center;
+    background-color:   rgba(0,0,0,0.2); 
+}
+#divImg{
+    display: inline-block;
+    padding: 2%;
+    margin-left: 3%;
+}
+ #butOrd:hover{
+     /*font-size:43px;*/
+     cursor: pointer;
+  color: #8ABF8A;
+  font-weight: bolder;
+    
+}
+#divReq{
+    color: red;
+    font-size: 20px;
+}
+   #pSucc{
+       color: white;
+         font-family: Papyrus;
+    font-size: 30px;
+    text-align: left;
+
+   }
+#divSucc{
+    width: 40%;
+    height: 140%;
+}
+  
+ #butOrd:disabled:hover{
+     /*font-size:43px;*/
+     /* cursor: pointer; */
+  color:  rgba(0,0,0,0); ;
+  /* font-weight: bolder; */
+   cursor:default;
+    
+}
+  
+ #butOrd:disabled{
+     /*font-size:43px;*/
+  cursor:default;
+  color:  rgba(0,0,0,0); 
+  /* font-weight: bolder; */
+    
+}
+#pay{
+    color: white;
+         font-family: Papyrus;
+    font-size: 30px;
+}
+ #PMess{
+         color: white;
+    font-weight: bolder;
+      font-family: Papyrus;
+        text-align: center;
+           font-size: 30px;
+    }
+    #PMess2{
+         color: #FAFD94;
+    font-weight: bolder;
+      font-family: Papyrus;
+      text-align: center;
+   font-size: 35px;
+    }
+     #ButYN{
+        /* display: inline-block; */
+        width: 47%;
+        margin-left: 25%;
+
+
+    }
+        #myModal{
+              background-color: rgba(0,0,0,0.16);
+                border: 1px solid white;
+        }
+            #HWar{
+                   font-size: 35px;
+    color: white;
+    font-weight: bolder;
+      font-family: Papyrus;
+      text-align: center;
+    
+            }
+    #myModal1{
+  background-color: rgba(0,0,0,0.16);
+                border: 1px solid white;
+                margin-top: -1%;
+    }
+            select{
+                width:150%;
+            }
+
+               .loader {
+  border: 16px solid rgba(0,0,0,0);
+  border-radius: 50%;
+  border-top: 16px solid #FAFD94;
+  width:250px;
+  height: 250px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-left: 40%;
+  /* margin-bottom: 25%; */
+/* margin: 25%; */
+
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

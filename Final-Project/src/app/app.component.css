@@ -1,0 +1,280 @@
+
+.div_1{
+width: 100px;
+  height: 100px;
+  border: 5px solid black;
+}
+.div_2{
+width: 100px;
+  height: 100px;
+  border: 5px solid red;
+}
+li{
+  display: inline-block;
+  padding: 20px;
+font-weight: bold;
+font-size: 25px;
+cursor: pointer;
+}
+
+#sale{
+    color: red;  
+     font-weight: bolder;   
+    }
+
+a,p{ 
+    color: white;
+     text-decoration-line: none;
+      cursor: pointer; 
+      font-family:Papyrus;
+       font-weight: bolder;
+    padding: 8px;
+    font-size: 30px;   
+    }
+  #logo{
+color: white;
+  }
+a:hover{
+   color: #8ABF8A;
+}
+ul{
+    background:none ;
+}
+li:hover{
+  font-size: 30px;
+}
+.login{
+   color:#FAFD94;
+     text-shadow:2px 2px #6F2B2A;
+float: right;
+  }
+.Bar{
+margin-right:50px;
+ }
+#lowerheader{
+margin-left:56px;
+padding: 25px;
+}
+#idDetails{
+    color: white;
+     text-decoration-line: none;
+      cursor: pointer; 
+      font-family:Papyrus;
+       font-weight: bolder;
+  float: right;
+   font-size: 25px;
+   text-align: center;
+
+}
+  #sale{
+    color:red;
+  }
+  
+  body {font-family: Verdana,sans-serif;}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.notActive{
+    display:none;
+}
+.isActive{
+    display:block;
+}
+input {
+  border: none;
+  outline: none;
+  background: none;
+font-family: Papyrus;
+
+} 
+button{
+ border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding-bottom: 15px;
+  font-size: 28px;
+  font-weight: bolder;
+   text-align: center;
+font-family: Papyrus;
+       
+}
+ label {
+  display: block;
+  font-family: Papyrus;
+  margin: 10px auto 0;
+
+ }
+  span {
+    font-size: 25px;
+    color: white;
+    font-weight: bolder;
+  
+}
+.Name{
+    width: 110%;
+}
+ input {
+  display: block;
+  width: 92%;
+    font-weight: bolder;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  border-bottom: 1px solid white;
+  /* text-align: center;
+  rgba(0,0,0,0.4) */
+} 
+::placeholder{
+    color:  rgba(0,0,0,0.2); 
+ 
+}
+   
+   #head{ 
+   color: white;
+   background-color: rgba(0,0,0,0.1); 
+     background-size: cover;    
+    background-position: center center;
+
+ background-repeat: no-repeat;
+background-attachment: fixed;
+    }
+  
+    #div3{
+
+  margin-left: 55%; 
+  width: 40%;
+  margin-top: -32%;
+    }
+#div2{
+    width:102%;
+    float:right;
+}
+.lab1{
+        
+font-family: Papyrus;
+display: inline-block;
+margin-right: 30px;
+font-family: Papyrus;
+width: 40%;
+
+    }
+h1{
+    text-align: center;
+    font-family: Papyrus;
+    font-weight:bolder;
+    font-size: 80px;
+    margin: 10px;
+}
+p{
+    text-align: center;
+    font-family: Papyrus;
+      font-size: 24px;
+      padding: 20px;
+
+}
+
+img{
+  width: 1000px;
+  height: 550px;
+}
+#idq
+{
+
+}
+#ids{
+ 
+  margin-right:500px;
+}
+h6{
+      text-align: center;
+    font-family: Papyrus;
+    font-weight:bolder;
+    font-size: 40px;
+    margin: 10px;
+}
+  #try{
+font-family: sans-serif;
+  }
+#bottomheader{
+  float: left
+}
+h5, h6{
+       text-align: center;
+    font-family: Papyrus;
+    font-weight:bolder;
+    font-size: 40px;
+    
+    margin: 10px;
+    color:#FAFD94;
+     text-shadow:2px 3px #6F2B2A;
+}
+#Winter{
+      color:#FAFD94;
+     text-shadow:2px 2px #6F2B2A;
+}
